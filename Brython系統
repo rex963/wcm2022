@@ -1,0 +1,13 @@
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+<script>// <![CDATA[
+window.onload=function(){
+brython({debug:1, pythonpath:['/cmsimde/static/','/downloads/py/']});
+}
+// ]]></script>
+<script type="text/python3">
+from browser import html, document
+print = document["print"]
+print <= '這一行直接利用 Brython 將資料列在 id="print" 的頁面'
+</script>
+<div id="print">在這裡打上要顯示的程式</div>
