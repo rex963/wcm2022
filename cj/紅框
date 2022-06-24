@@ -1,0 +1,29 @@
+# 畫紅框
+# 導入文檔
+從瀏覽器導入文檔作為文檔
+#下面將利用 html 生成所需的繪圖布
+從瀏覽器導入html
+# 使用函式庫執行三角函數數學
+導入數學
+畫布 = html.CANVAS（寬度 = 600，高度 = 400）
+#canvas.style = {“寬度”：“100%”}
+canvas.id = "taiwan_flag"
+# 將圖畫至 id 為 brython_div 的 cnavas 命名
+brython_div = doc["brython_div"]
+brython_div <= 畫布
+#準備圖畫布
+畫布 = doc["taiwan_flag"]
+ctx = canvas.getContext("2d")
+# 進行轉換，x軸不變，y軸座標相對移動canvas.height 且單位光點
+# ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+#下面採用畫布圖紙示意圖
+flag_w = canvas.width
+flag_h = canvas.height
+circle_x = flag_w/4
+circle_y = flag_h/4
+#先畫滿地紅
+ctx.fillStyle='rgb(255, 0, 0)'
+ctx.fillRect(200,100,flag_w,flag_h)
+#再畫白
+ctx.fillStyle='#fff'
+ctx.fillRect(250,150,flag_w/2,flag_h/2)
