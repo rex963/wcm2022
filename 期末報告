@@ -1,0 +1,19 @@
+<p>&nbsp;</p>
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+<script>// <![CDATA[
+window.onload=function(){
+brython({debug:1, pythonpath:['/cmsimde/static/','/downloads/py/']});
+}
+// ]]></script>
+<script type="text/python3">
+from browser import html, document
+print = document["print"]
+print <= '這一行直接利用 Brython 將資料列在 id="print" 的頁面'
+</script>
+<div id="print"><div class="separator" style="clear: both; text-align: center;">
+  <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5V23FzWLBUXLTMVYHrYO4UOaACUVavsiFNdUepBSO8wiPBQqVkG6dWSsX-Oi8AMmeDMEY8x0ZmVqbGjqZHHVxopnXd4tSfBCe4MnEjI-RcDfz9ewsfi1CzeKRfW7qwzSJQVTyzZwGWa0A8pP0aof_f-wVM3DsLVTZA-lVnRftQggT_Sv8_WGHY1G_/s640/640px-Flag_of_the_United_Kingdom.svg.png" style="margin-left: 1em; margin-right: 1em;">
+    <img border="0" data-original-height="320" data-original-width="600" height="160" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5V23FzWLBUXLTMVYHrYO4UOaACUVavsiFNdUepBSO8wiPBQqVkG6dWSsX-Oi8AMmeDMEY8x0ZmVqbGjqZHHVxopnXd4tSfBCe4MnEjI-RcDfz9ewsfi1CzeKRfW7qwzSJQVTyzZwGWa0A8pP0aof_f-wVM3DsLVTZA-lVnRftQggT_Sv8_WGHY1G_/s320/640px-Flag_of_the_United_Kingdom.svg.png" width="300" /></a></div><br /><p></p>
+<font color="#000079">古人常云：「熟能生巧。」真的沒亂說，摸個幾次後就熟悉了。
+  我首先先到wcm2022_guide_Brython配置，從底下找到了Brython
+  的程式碼，隨後就是一套Ctrl+c、Ctrl+v連技，答答答幾聲就搞定了</font></div>
