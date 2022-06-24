@@ -1,0 +1,8 @@
+# sum 初始值設為 0
+sum = 0
+init = 1
+upto = 10
+# 利用 for 重複迴圈與變數加法進行累加
+for i in range(init, upto+1):
+    sum = sum + i
+print("從" + str(init) + "累加到" + str(upto) + "=" + str(sum))
