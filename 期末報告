@@ -1,19 +1,188 @@
-<p>&nbsp;</p>
-<script src="/static/brython.js"></script>
-<script src="/static/brython_stdlib.js"></script>
-<script>// <![CDATA[
-window.onload=function(){
-brython({debug:1, pythonpath:['/cmsimde/static/','/downloads/py/']});
-}
-// ]]></script>
-<script type="text/python3">
-from browser import html, document
-print = document["print"]
-print <= '這一行直接利用 Brython 將資料列在 id="print" 的頁面'
+<p>英國國旗&nbsp;</p><p><!--導入 brython.js 程式庫--></p><p><!--導入 brython.js 程式庫--></p><p><!--導入 brython.js 程式庫--><script src="https://mde.tw/wcm2022_guide/cmsimde/static/brython.js">
 </script>
-<div id="print"><div class="separator" style="clear: both; text-align: center;">
-  <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5V23FzWLBUXLTMVYHrYO4UOaACUVavsiFNdUepBSO8wiPBQqVkG6dWSsX-Oi8AMmeDMEY8x0ZmVqbGjqZHHVxopnXd4tSfBCe4MnEjI-RcDfz9ewsfi1CzeKRfW7qwzSJQVTyzZwGWa0A8pP0aof_f-wVM3DsLVTZA-lVnRftQggT_Sv8_WGHY1G_/s640/640px-Flag_of_the_United_Kingdom.svg.png" style="margin-left: 1em; margin-right: 1em;">
-    <img border="0" data-original-height="320" data-original-width="600" height="160" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5V23FzWLBUXLTMVYHrYO4UOaACUVavsiFNdUepBSO8wiPBQqVkG6dWSsX-Oi8AMmeDMEY8x0ZmVqbGjqZHHVxopnXd4tSfBCe4MnEjI-RcDfz9ewsfi1CzeKRfW7qwzSJQVTyzZwGWa0A8pP0aof_f-wVM3DsLVTZA-lVnRftQggT_Sv8_WGHY1G_/s320/640px-Flag_of_the_United_Kingdom.svg.png" width="300" /></a></div><br /><p></p>
-<font color="#000079">古人常云：「熟能生巧。」真的沒亂說，摸個幾次後就熟悉了。
-  我首先先到wcm2022_guide_Brython配置，從底下找到了Brython
-  的程式碼，隨後就是一套Ctrl+c、Ctrl+v連技，答答答幾聲就搞定了</font></div>
+
+<!--導入 brython_stdlib.js 標準程式庫-->
+<script src="https://mde.tw/wcm2022_guide/cmsimde/static/brython_stdlib.js">
+</script>
+
+<!--啟動 brython-->
+<script>
+window.onload=function(){
+brython();
+}
+</script>
+
+<!--執行所需要的 Brython 程式-->
+<script type="text/python3">
+from browser import window, html
+from browser import document as doc
+
+import turtle
+turtle.set_defaults(
+    turtle_canvas_wrapper = doc['brython_div']
+)
+# Create screen and turtle objects
+screen = turtle.Screen()
+screen.setup(100, 100)
+t = turtle.Turtle()
+t.pencolor('black')
+t.begin_fill()
+# 藍底
+t.penup()
+t.goto(-100,0)
+t.pendown()
+for i in range(2):
+    t.forward(300)
+    t.left(90)
+    t.forward(150)
+    t.left(90)
+
+t.fillcolor('blue')
+t.end_fill()
+
+#斜條白
+t.begin_fill()
+t.pencolor('white')
+t.penup()
+t.goto(-100,15)
+t.pendown()
+t.goto(185,150)
+t.goto(200,150)
+t.goto(200,135)
+t.goto(-85,0)
+t.goto(-100,0)
+t.fillcolor('white')
+t.end_fill()
+
+#斜條紅
+t.begin_fill()
+t.pencolor('red')
+t.penup()
+t.goto(-100,0)
+t.pendown()
+t.goto(5,50)
+t.goto(15,50)
+t.goto(-90,0)
+t.fillcolor('red')
+t.end_fill()
+
+#斜條白
+t.begin_fill()
+t.pencolor('white')
+t.penup()
+t.goto(-100,150)
+t.pendown()
+t.goto(-100,135)
+t.goto(185,0)
+t.goto(200,0)
+t.goto(200,15)
+t.goto(-70,150)
+t.goto(-100,150)
+t.fillcolor('white')
+t.end_fill()
+
+#斜條紅
+t.begin_fill()
+t.pencolor('red')
+t.penup()
+t.goto(200,150)
+t.pendown()
+t.goto(95,100)
+t.goto(85,100)
+t.goto(190,150)
+t.fillcolor('red')
+t.end_fill()
+
+#斜條紅
+t.begin_fill()
+t.pencolor('red')
+t.penup()
+t.goto(-100,150)
+t.pendown()
+t.goto(-100,140)
+t.goto(-5,100)
+t.goto(5,100)
+t.goto(-100,150)
+t.fillcolor('red')
+t.end_fill()
+
+#斜條紅
+t.begin_fill()
+t.pencolor('red')
+t.penup()
+t.goto(200,0)
+t.pendown()
+t.goto(95,50)
+t.goto(105,50)
+t.goto(200,10)
+t.goto(200,0)
+t.fillcolor('red')
+t.end_fill()
+
+
+#橫條白
+t.begin_fill()
+t.pencolor('white')
+t.penup()
+t.goto(-100,50)
+t.pendown()
+for i in range(2):
+    t.forward(300)
+    t.left(90)
+    t.forward(50)
+    t.left(90)
+
+t.fillcolor('white')
+t.end_fill()
+
+#直條白
+t.begin_fill()
+t.pencolor('white')
+t.penup()
+t.goto(25,0)
+t.pendown()
+for i in range(2):
+    t.forward(50)
+    t.left(90)
+    t.forward(150)
+    t.left(90)
+
+t.fillcolor('white')
+t.end_fill()
+
+#橫條紅
+t.begin_fill()
+t.pencolor('red')
+t.penup()
+t.goto(35,0)
+t.pendown()
+for i in range(2):
+    t.forward(30)
+    t.left(90)
+    t.forward(150)
+    t.left(90)
+
+t.fillcolor('red')
+t.end_fill()
+
+#直條紅
+t.begin_fill()
+t.pencolor('red')
+t.penup()
+t.goto(-100,60)
+t.pendown()
+for i in range(2):
+    t.forward(300)
+    t.left(90)
+    t.forward(30)
+    t.left(90)
+
+t.fillcolor('red')
+t.end_fill()
+
+
+turtle.done()
+
+</script>
+</p><div id="brython_div"></div>
+<font color=#4A4AFF>一開始先用python畫，然後再改成Brython，弄到想哭，一直弄不好，一直重來</font>
