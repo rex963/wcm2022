@@ -1,13 +1,46 @@
-<script src="/static/brython.js"></script>
-<script src="/static/brython_stdlib.js"></script>
-<script>// <![CDATA[
-window.onload=function(){
-brython({debug:1, pythonpath:['/cmsimde/static/','/downloads/py/']});
-}
-// ]]></script>
-<script type="text/python3">
-from browser import html, document
-print = document["print"]
-print <= '這一行直接利用 Brython 將資料列在 id="print" 的頁面'
+<p>英國國旗&nbsp;</p><p><!--導入 brython.js 程式庫--></p><p><!--導入 brython.js 程式庫--></p><p><!--導入 brython.js 程式庫--><script src="https://mde.tw/wcm2022_guide/cmsimde/static/brython.js">
 </script>
-<div id="print">在這裡打上要顯示的程式</div>
+
+<!--導入 brython_stdlib.js 標準程式庫-->
+<script src="https://mde.tw/wcm2022_guide/cmsimde/static/brython_stdlib.js">
+</script>
+
+<!--啟動 brython-->
+<script>
+window.onload=function(){
+brython();
+}
+</script>
+
+<!--執行所需要的 Brython 程式-->
+<script type="text/python3">
+from browser import window, html
+from browser import document as doc
+
+import turtle
+turtle.set_defaults(
+    turtle_canvas_wrapper = doc['brython_div']
+)
+t = turtle.Turtle()
+t.width(5)
+for c in ['red', '#00ff00', '#fa0', 'rgb(0,0,200)']:
+    t.color(c)
+    t.forward(100)
+    t.left(90)
+# dot() and write() do not require the pen to be down
+t.penup()
+t.goto(-30, -100)
+t.dot(40, 'rgba(255, 0, 0, 0.5')
+t.goto(30, -100)
+t.dot(40, 'rgba(0, 255, 0, 0.5')
+t.goto(0, -70)
+t.dot(40, 'rgba(0, 0, 255, 0.5')
+t.goto(0, 125)
+t.color('purple')
+t.write("這就是 Brython, 網頁上的 Python", font=("Arial", 15, "normal"))
+turtle.done()
+
+</script>
+</p><div id="brython_div"></div>
+
+
